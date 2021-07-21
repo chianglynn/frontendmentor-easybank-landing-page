@@ -16,11 +16,12 @@
         <img src="images/logo.svg" alt="Easybank" />
       </a>
 
-      <a href="#" class="nav-menu-icon hidden-for-desktop">
-        <img src="images/icon-hamburger.svg" alt="Nav Menu Icon" />
-      </a>
+      <div class="nav-menu-icon hidden-for-desktop">
+        <img class="nav-menu-hamburger-icon" src="images/icon-hamburger.svg" alt="Nav Menu Open Icon" />
+        <img class="nav-menu-close-icon hidden" src="images/icon-close.svg" alt="Nav Close Icon" />
+      </div>
 
-      <div class="nav-links hidden-for-mobile">
+      <div class="nav-links hidden-for-mobile hidden">
         <a href="#">Home</a>
         <a href="#">About</a>
         <a href="#">Contact</a>
@@ -32,6 +33,20 @@
     </nav>
   </header>
 
+  <div class="nav-menu-mobile">
+    <div class="overlay"></div>
+    <div class="nav-links-for-mobile hidden-for-desktop">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Blog</a>
+      <a href="#">Careers</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1 class="heading">Next generation digital banking</h1>
+  </div>
   <!-- 
   Next generation digital banking
 

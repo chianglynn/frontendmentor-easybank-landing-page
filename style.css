@@ -53,10 +53,32 @@ a:focus {
 }
 
 .nav {
+    position       : relative;
     display        : flex;
     justify-content: space-between;
     align-items    : center;
     padding        : 1.5rem;
+    z-index        : 1;
+}
+
+.nav-menu-hamburger-icon,
+.nav-menu-close-icon {
+    position  : absolute;
+    top       : 1.5rem;
+    right     : 1.5rem;
+    cursor    : pointer;
+    opacity   : 1;
+    transition: all .3s ease-in-out;
+}
+
+.nav-menu-close-icon {
+    top  : 1.3rem;
+    right: 1.7rem;
+}
+
+.hidden {
+    opacity  : 0;
+    transform: scale(0);
 }
 
 .request-invite-button {
@@ -75,6 +97,29 @@ a:focus {
     opacity    : .7;
 }
 
+.overlay {
+    display   : none;
+    position  : fixed;
+    top       : 72px;
+    left      : 0;
+    width     : 100vw;
+    height    : 100vh;
+    background: linear-gradient(to bottom, var(--dark-blue), transparent);
+    opacity   : .5;
+}
+
+.animation-fade-in {
+    animation: fade-in .3s ease-in-out forwards;
+}
+
+.animation-fade-out {
+    animation: fade-out .3s ease-in-out forwards;
+}
+
+.heading {
+    color: var(--dark-blue);
+}
+
 .attribution {
     font-size : 11px;
     text-align: center;
@@ -84,13 +129,52 @@ a:focus {
     color: hsl(228, 45%, 44%);
 }
 
+/* Animations */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Responsive design for mobile device and desktop */
 @media screen and (min-width: 375px) {
     .hidden-for-mobile {
         display: none;
     }
 
-    .nav-links a {
+    .nav-links-for-mobile a {
         color: var(--dark-blue);
+    }
+
+    .nav-links-for-mobile {
+        display        : flex;
+        flex-direction : column;
+        justify-content: center;
+        align-items    : center;
+        width          : 85%;
+        padding        : 1rem 0;
+        margin         : 1rem auto 0;
+        border-radius  : 5px;
+        /* background  : var(--white); */
+        background     : red;
+    }
+
+    .nav-links-for-mobile a {
+        padding: 1rem 0;
     }
 }
 
