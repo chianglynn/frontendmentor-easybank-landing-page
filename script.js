@@ -1,30 +1,46 @@
+// Nav menu variables
 const nav = document.querySelector('.nav');
-const navMenuOpenIcon = document.querySelector('.nav-menu-hamburger-icon');
-const navMenuCloseIcon = document.querySelector('.nav-menu-close-icon');
-const mobileNavMenu = document.querySelector('.nav-links-for-mobile');
+const navOpenIcon = document.querySelector('.nav-hamburger-icon');
+const navCloseIcon = document.querySelector('.nav-close-icon');
+const overlayAndMobileNavMenu = document.querySelector('.overlay-nav-menu');
 const overlay = document.querySelector('.overlay');
+const mobileNavMenu = document.querySelector('.nav-menu');
+const navHeight = nav.getBoundingClientRect().height;
+// Section variables
+const sectionOne = document.querySelector('.section-1');
 
-function showNavMenu() {
-    navMenuOpenIcon.classList.add('hidden');
-    navMenuCloseIcon.classList.remove('hidden');
+// Nav Menu Functions
+const showMenu = () => {
+    navOpenIcon.classList.toggle('hide-nav-icon');
+    navCloseIcon.classList.toggle('hide-nav-icon');
+    overlayAndMobileNavMenu.style.display = 'block';
+    overlayAndMobileNavMenu.classList.remove('animation-fade-out');
+    overlayAndMobileNavMenu.classList.add('animation-fade-in');
+    mobileNavMenu.style.top = `${navHeight + 15}px`;
+    overlay.style.top = `${navHeight}px`;
+};
 
-    mobileNavMenu.classList.remove('hidden');
+const hideMenu = () => {
+    navOpenIcon.classList.toggle('hide-nav-icon');
+    navCloseIcon.classList.toggle('hide-nav-icon');
+    overlayAndMobileNavMenu.classList.remove('animation-fade-in');
+    overlayAndMobileNavMenu.classList.add('animation-fade-out');
 
-    overlay.style.display = 'block';
-    overlay.classList.remove('animation-fade-out');
-    overlay.classList.add('animation-fade-in');
-}
+};
 
-function hideNavMenu() {
-    navMenuCloseIcon.classList.add('hidden');
-    navMenuOpenIcon.classList.remove('hidden');
+const fixNav = entries => {
+    const [entry] = entries;
+    if (!entry.isIntersecting) nav.classList.add('fixed-nav');
+    else nav.classList.remove('fixed-nav');
+};
 
-    mobileNavMenu.classList.add('hidden');
+const sectionOneObserver = new IntersectionObserver(fixNav, {
+    root: null,
+    threshold: 0,
+    rootMargin: `-${navHeight}px`,
+});
 
-    overlay.classList.remove('animation-fade-in');
-    overlay.classList.add('animation-fade-out');
-    setTimeout(() => overlay.style.display = 'none', 300);
-}
-
-navMenuOpenIcon.addEventListener('click', showNavMenu);
-navMenuCloseIcon.addEventListener('click', hideNavMenu);
+// Observer and event listeners
+sectionOneObserver.observe(sectionOne);
+navOpenIcon.addEventListener('click', showMenu);
+navCloseIcon.addEventListener('click', hideMenu);
