@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
 
+/* Global styles */
 :root {
     /* Primary color */
     --dark-blue         : hsl(233, 26%, 24%);
@@ -49,7 +50,7 @@ body {
     font-family: 'Public Sans', sans-serif;
     font-size  : var(--font-s);
     font-weight: 300;
-    line-height: 1.2;
+    line-height: 1.5;
     color      : var(--grayish-blue);
 }
 
@@ -78,6 +79,7 @@ a:focus {
     width          : 100vw;
     padding        : 1.5rem;
     background     : var(--white);
+    z-index        : 1;
 }
 
 .fixed-nav {
@@ -168,13 +170,21 @@ a:focus {
     display: none;
 }
 
-/* Sections */
+/* Heading and fontsize */
+.heading {
+    margin     : 0;
+    color      : var(--dark-blue);
+    font-weight: 300;
+}
+
 h1 {
-    font-size: var(--fontsize-1);
+    font-size  : var(--fontsize-1);
+    line-height: 1.15;
 }
 
 h2 {
-    font-size: var(--fontsize-2);
+    font-size  : var(--fontsize-2);
+    line-height: 1.15;
 }
 
 
@@ -199,24 +209,59 @@ small {
 }
 
 /* Sections */
-.heading {
-    color: var(--dark-blue);
-}
-
 .section {
-    padding: 3rem 2rem;
+    width: 100%;
 }
 
+.section-2,
+.section-3 {
+    padding: 3rem 3rem;
+}
+
+/* Section 1 */
 .section-1 {
-    background: var(--white);
+    background: var(--very-light-gray);
 }
 
+.background-imgs {
+    position           : relative;
+    min-height         : 20rem;
+    background-image   : url('https://raw.githubusercontent.com/chianglynn/frontendmentor-easybank-landing-page/3727580712bb394a287d8e6a60229dc2108df4eb/images/bg-intro-mobile.svg');
+    background-size    : cover;
+    background-repeat  : no-repeat;
+    background-position: center center;
+}
+
+.background-imgs img {
+    position : absolute;
+    left     : 50%;
+    bottom   : -5%;
+    width    : 90%;
+    transform: translateX(-50%);
+}
+
+.introduction {
+    padding   : 2rem 3rem 6rem;
+    text-align: center;
+}
+
+.introduction p {
+    padding-bottom: 2rem;
+}
+
+/* Section 2 */
 .section-2 {
     background: var(--light-grayish-blue);
 }
 
+/* Section 3 */
 .section-3 {
     background: var(--very-light-gray);
+}
+
+.article img {
+    width : 20.5rem;
+    height: 12.5rem;
 }
 
 /* Footer */
@@ -298,7 +343,7 @@ small {
         padding-right: 2rem;
     }
 
-    /* Sections */
+    /* Fontsize*/
     .section-1 p {
         font-size: var(--fontsize-5);
     }
@@ -317,5 +362,31 @@ small {
 
     .section-3 p {
         font-size: var(--fontsize-7);
+    }
+
+    /* Section 1 */
+    .section-1 {
+        display       : flex;
+        flex-direction: row-reverse;
+        align-items   : center;
+    }
+
+    .background-imgs {
+        flex               : 3;
+        min-height         : 38rem;
+        background-image   : url('https://raw.githubusercontent.com/chianglynn/frontendmentor-easybank-landing-page/3727580712bb394a287d8e6a60229dc2108df4eb/images/bg-intro-desktop.svg');
+        background-size    : 160%;
+        background-position: left center;
+    }
+
+    .background-imgs img {
+        left : 65%;
+        top  : -10%;
+        width: 95%;
+    }
+
+    .introduction {
+        flex      : 2;
+        text-align: left;
     }
 }
