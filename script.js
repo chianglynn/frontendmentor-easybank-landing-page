@@ -16,7 +16,7 @@ const showMenu = () => {
     overlayAndMobileNavMenu.style.display = 'block';
     overlayAndMobileNavMenu.classList.remove('animation-fade-out');
     overlayAndMobileNavMenu.classList.add('animation-fade-in');
-    mobileNavMenu.style.top = `${navHeight + 15}px`;
+    mobileNavMenu.style.top = `${navHeight + 25}px`;
     overlay.style.top = `${navHeight}px`;
 };
 
