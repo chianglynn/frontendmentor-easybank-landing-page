@@ -490,6 +490,27 @@ small {
         width: 95%;
     }
 
+    .nav-link {
+        position: relative;
+    }
+
+    .nav-link::before {
+        content   : "";
+        position  : absolute;
+        right     : 0;
+        bottom    : -40px;
+        display   : block;
+        width     : 100%;
+        height    : 5px;
+        background: linear-gradient(to right, var(--lime-green), var(--bright-cyan));
+        opacity   : 0;
+        transition: opacity .2s ease-in-out;
+    }
+
+    .nav-link:hover::before {
+        opacity: 1;
+    }
+
     .introduction {
         flex      : 2;
         text-align: left;
@@ -518,7 +539,7 @@ small {
     }
 
     .feature:not(:last-child) {
-        padding: 0 2rem 0 0;
+        padding: 0 1rem 0 0;
     }
 
     .section-3 h2 {
