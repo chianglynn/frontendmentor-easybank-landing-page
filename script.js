@@ -4,7 +4,7 @@ const navOpenIcon = document.querySelector('.nav-hamburger-icon');
 const navCloseIcon = document.querySelector('.nav-close-icon');
 const overlayAndMobileNavMenu = document.querySelector('.overlay-nav-menu');
 const overlay = document.querySelector('.overlay');
-const mobileNavMenu = document.querySelector('.nav-menu');
+const navMenu = document.querySelector('.nav-menu');
 const navHeight = nav.getBoundingClientRect().height;
 // Section variables
 const sectionOne = document.querySelector('.section-1');
@@ -16,7 +16,7 @@ const showMenu = () => {
     overlayAndMobileNavMenu.style.display = 'block';
     overlayAndMobileNavMenu.classList.remove('animation-fade-out');
     overlayAndMobileNavMenu.classList.add('animation-fade-in');
-    mobileNavMenu.style.top = `${navHeight + 25}px`;
+    navMenu.style.top = `${navHeight + 25}px`;
     overlay.style.top = `${navHeight}px`;
 };
 
