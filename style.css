@@ -517,9 +517,8 @@ small {
         padding   : 2rem 2rem 6rem 9rem;
     }
 
-    /* Section 2 & 3 */
-    .section-2,
-    .section-3 {
+    /* Section 2 */
+    .section-2 {
         text-align: left;
         padding   : 7rem 9rem;
     }
@@ -542,8 +541,15 @@ small {
         padding: 0 1rem 0 0;
     }
 
-    .section-3 h2 {
+    /* Section 3 */
+    .section-3 {
         text-align: left;
+        padding   : 7rem 6rem;
+    }
+
+    .section-3 h2 {
+        text-align : left;
+        margin-left: 1.5rem;
     }
 
     .articles-container {
