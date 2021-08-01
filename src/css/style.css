@@ -235,7 +235,7 @@ small {
 .background-imgs {
     position           : relative;
     min-height         : 20rem;
-    background-image   : url('https://raw.githubusercontent.com/chianglynn/frontendmentor-easybank-landing-page/3727580712bb394a287d8e6a60229dc2108df4eb/images/bg-intro-mobile.svg');
+    background-image   : url('../images/bg-intro-mobile.svg');
     background-size    : cover;
     background-repeat  : no-repeat;
     background-position: center center;
