@@ -387,8 +387,6 @@ object {
 
     .nav-menu {
         position     : fixed;
-        top          : calc(68px + 25px);
-        /* test */
         left         : 50%;
         padding      : 1rem 0;
         margin       : 0 auto;
