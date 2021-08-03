@@ -64,118 +64,6 @@ a:focus {
     border: none;
 }
 
-/* Nav */
-.header {
-    overflow-x: hidden;
-}
-
-.logo img {
-    display        : flex;
-    justify-content: center;
-    align-items    : center;
-}
-
-.nav {
-    min-width      : 375px;
-    max-width      : 1440px;
-    position       : relative;
-    display        : flex;
-    justify-content: space-between;
-    align-items    : center;
-    width          : 100vw;
-    padding        : 1.5rem;
-    background     : var(--white);
-    z-index        : 1;
-}
-
-.fixed-nav {
-    position: fixed;
-    top     : 0;
-}
-
-.nav-hamburger-icon,
-.nav-close-icon {
-    position  : absolute;
-    top       : 1.5rem;
-    right     : 1.5rem;
-    opacity   : 1;
-    transition: all .3s ease-in-out;
-    cursor    : pointer;
-}
-
-.nav-close-icon {
-    top  : 1.3rem;
-    right: 1.7rem;
-}
-
-.hide-nav-icon {
-    opacity  : 0;
-    transform: scale(0);
-}
-
-.overlay-nav-menu {
-    display: none;
-}
-
-.animation-fade-in {
-    animation: fade-in .3s ease-in-out forwards;
-}
-
-.animation-fade-out {
-    animation: fade-out .3s ease-in-out forwards;
-}
-
-.overlay {
-    position  : fixed;
-    top       : 72px;
-    left      : 0;
-    width     : 100vw;
-    height    : 100vh;
-    background: linear-gradient(to bottom, var(--dark-blue), transparent);
-    opacity   : .5;
-}
-
-.nav-menu {
-    position     : absolute;
-    left         : 50%;
-    padding      : 1rem 0;
-    margin       : 0 auto;
-    border-radius: 5px;
-    display      : block;
-    text-align   : center;
-    width        : 85%;
-    background   : var(--white);
-    transform    : translateX(-50%);
-}
-
-.nav-menu li,
-.footer-menu li {
-    padding   : .75rem 0;
-    list-style: none;
-}
-
-.nav-link {
-    color: var(--dark-blue);
-}
-
-.nav-link:hover {
-    opacity: .7;
-}
-
-.request-invite-button {
-    padding      : .875rem 2.1875rem;
-    border       : 0;
-    border-radius: 50px;
-    background   : linear-gradient(to right, var(--lime-green), var(--bright-cyan));
-    font-weight  : 700;
-    color        : var(--white);
-    transition   : opacity .2s ease-in-out;
-}
-
-.hidden-for-mobile {
-    display: none;
-}
-
 /* Heading and fontsize */
 .heading {
     margin     : 0;
@@ -213,6 +101,77 @@ small {
     font-size: var(--fontsize-8);
 }
 
+/* Header & Nav */
+.header {
+    overflow-x: hidden;
+}
+
+.nav {
+    min-width      : 375px;
+    max-width      : 1440px;
+    position       : relative;
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    width          : 100vw;
+    padding        : 1.5rem;
+    background     : var(--white);
+    z-index        : 1;
+}
+
+.logo img {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.nav-menu li {
+    list-style: none;
+}
+
+.nav-link {
+    color: var(--dark-blue);
+}
+
+.nav-link:hover {
+    opacity: .7;
+}
+
+.nav-hamburger-icon,
+.nav-close-icon {
+    position  : absolute;
+    top       : 1.5rem;
+    right     : 1.5rem;
+    opacity   : 1;
+    transition: all .3s ease-in-out;
+    cursor    : pointer;
+}
+
+.nav-close-icon {
+    top  : 1.3rem;
+    right: 1.7rem;
+}
+
+.hide-nav-icon {
+    opacity  : 0;
+    transform: scale(0);
+}
+
+.request-invite-button {
+    padding      : .875rem 2.1875rem;
+    border       : 0;
+    border-radius: 50px;
+    background   : linear-gradient(to right, var(--lime-green), var(--bright-cyan));
+    font-weight  : 700;
+    color        : var(--white);
+    transition   : opacity .2s ease-in-out;
+}
+
+.fixed-nav {
+    position: fixed;
+    top     : 0;
+}
+
 /* Sections */
 .container {
     overflow-x: hidden;
@@ -232,23 +191,6 @@ small {
     background: var(--very-light-gray);
 }
 
-.background-imgs {
-    position           : relative;
-    min-height         : 20rem;
-    background-image   : url('../images/bg-intro-mobile.svg');
-    background-size    : cover;
-    background-repeat  : no-repeat;
-    background-position: center center;
-}
-
-.background-imgs img {
-    position : absolute;
-    left     : 50%;
-    bottom   : -5%;
-    width    : 90%;
-    transform: translateX(-50%);
-}
-
 .introduction {
     padding   : 2rem 3rem 6rem;
     text-align: center;
@@ -256,6 +198,17 @@ small {
 
 .introduction p {
     padding-bottom: 2rem;
+}
+
+.background-imgs {
+    position           : relative;
+    background-size    : cover;
+    background-repeat  : no-repeat;
+    background-position: center center;
+}
+
+.background-imgs img {
+    position: absolute;
 }
 
 /* Section 2 */
@@ -278,6 +231,10 @@ small {
 
 .feature:not(:last-child) {
     padding-bottom: 2rem;
+}
+
+object {
+    margin-bottom: 1.5rem;
 }
 
 /* Section 3 */
@@ -362,6 +319,11 @@ small {
     text-align: center;
 }
 
+.footer-menu li {
+    padding   : .75rem 0;
+    list-style: none;
+}
+
 .footer-link {
     color: var(--white);
 }
@@ -409,43 +371,78 @@ small {
 }
 
 /* Responsive design for mobile device and desktop */
+@media screen and (max-width:767px) {
+
+    /* Nav */
+    .overlay {
+        position  : relative;
+        position  : fixed;
+        top       : 68px;
+        left      : 0;
+        width     : 100vw;
+        height    : 100vh;
+        background: linear-gradient(to bottom, var(--dark-blue), transparent);
+        opacity   : .5;
+    }
+
+    .nav-menu {
+        position     : fixed;
+        top          : calc(68px + 25px);
+        /* test */
+        left         : 50%;
+        padding      : 1rem 0;
+        margin       : 0 auto;
+        width        : 85%;
+        border-radius: 5px;
+        text-align   : center;
+        background   : var(--white);
+        transform    : translateX(-50%);
+    }
+
+    .nav-menu li {
+        padding: .75rem 0;
+    }
+
+    .overlay-nav-menu {
+        display: none;
+    }
+
+    .animation-fade-in {
+        animation: fade-in .3s ease-in-out forwards;
+    }
+
+    .animation-fade-out {
+        animation: fade-out .3s ease-in-out forwards;
+    }
+
+    .nav .request-invite-button {
+        display: none;
+    }
+
+    /* Section 1 */
+    .background-imgs {
+        min-height         : 20rem;
+        background-image   : url('../images/bg-intro-mobile.svg');
+        background-size    : cover;
+        background-repeat  : no-repeat;
+        background-position: center center;
+    }
+
+    .background-imgs img {
+        left     : 50%;
+        bottom   : -5%;
+        width    : 90%;
+        transform: translateX(-50%);
+    }
+}
+
 @media screen and (min-width: 768px) {
     .hidden-for-desktop {
         display: none;
     }
 
-    .hidden-for-mobile {
-        display: block;
-    }
-
     a {
         font-size: var(--fontsize-7);
-    }
-
-    /* Nav */
-    .nav {
-        justify-content: space-around;
-    }
-
-    .overlay-nav-menu {
-        display: block;
-    }
-
-    .nav-menu {
-        position       : inherit;
-        display        : flex;
-        justify-content: center;
-        align-items    : center;
-        padding        : 0;
-        transform      : translateX(0);
-    }
-
-    .nav-menu li {
-        padding: 0;
-    }
-
-    .nav-menu li:not(:last-child) {
-        padding-right: 2rem;
     }
 
     /* Fontsize*/
@@ -469,25 +466,15 @@ small {
         font-size: var(--fontsize-7);
     }
 
-    /* Section 1 */
-    .section-1 {
-        display       : flex;
-        flex-direction: row-reverse;
-        align-items   : center;
+    /* Nav */
+    .nav-menu {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
     }
 
-    .background-imgs {
-        flex               : 3;
-        min-height         : 38rem;
-        background-image   : url('https://raw.githubusercontent.com/chianglynn/frontendmentor-easybank-landing-page/3727580712bb394a287d8e6a60229dc2108df4eb/images/bg-intro-desktop.svg');
-        background-size    : 160%;
-        background-position: left center;
-    }
-
-    .background-imgs img {
-        left : 65%;
-        top  : -10%;
-        width: 95%;
+    .nav-menu li:not(:last-child) {
+        padding-right: 2rem;
     }
 
     .nav-link {
@@ -509,6 +496,27 @@ small {
 
     .nav-link:hover::before {
         opacity: 1;
+    }
+
+    /* Section 1 */
+    .section-1 {
+        display       : flex;
+        flex-direction: row-reverse;
+        align-items   : center;
+    }
+
+    .background-imgs {
+        flex               : 3;
+        min-height         : 38rem;
+        background-image   : url('../images/bg-intro-desktop.svg');
+        background-size    : 160%;
+        background-position: left center;
+    }
+
+    .background-imgs img {
+        left : 20%;
+        top  : -10%;
+        width: 95%;
     }
 
     .introduction {
