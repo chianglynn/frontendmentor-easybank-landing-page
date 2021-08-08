@@ -43,4 +43,4 @@ const sectionOneObserver = new IntersectionObserver(fixNav, {
 // Observer and event listeners
 sectionOneObserver.observe(sectionOne);
 navOpenIcon.addEventListener('click', showMenu);
-navCloseIcon.addEventListener('click', hideMenu);
+[navCloseIcon, overlay].forEach(element => element.addEventListener('click', hideMenu));
