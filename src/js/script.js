@@ -40,7 +40,9 @@ const sectionOneObserver = new IntersectionObserver(fixNav, {
     rootMargin: `-${navHeight}px`,
 });
 
-// Observer and event listeners
+// Observer
 sectionOneObserver.observe(sectionOne);
+
+// Event listeners
 navOpenIcon.addEventListener('click', showMenu);
 [navCloseIcon, overlay].forEach(element => element.addEventListener('click', hideMenu));
