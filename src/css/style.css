@@ -85,7 +85,7 @@ h3 {
     font-size: var(--fontsize-3);
 }
 
-h4 {
+.content h3 {
     font-size: var(--fontsize-5);
 }
 
